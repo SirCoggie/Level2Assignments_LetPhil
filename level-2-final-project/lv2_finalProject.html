@@ -20,39 +20,67 @@
             <p id="trendfinder">TrendFinder</p>
 
             <div class="search-options">
-                <P id="google-btn" class="option-btn active">Google</P>
+                <p id="google-btn" class="option-btn active">Google</p>
                 <p id="youtube-btn" class="option-btn">youtube</p>
             </div>
 
-            <div class="right-section">
+            <button class="toggle-switch">
                 <i id="theme-toggle" class="fa-regular fa-lightbulb"></i>
-                <i id="profile" class="fa-solid fa-image"></i>
-            </div>
-
-
-
+            </button>
 
         </div>
 
-            <p>Find which country have the words searched most!</p>
+            <p id="question">Find which country have the words searched most!</p>
 
         <main>
             <p>Search Your words!</p>
-            <form action="">
-                <input type="text" autocomplete="off">
-                <button>
+            <form id="search_word">
+                <input id="searchInput" type="text" autocomplete="off">
+                <button class="search-engine" type="submit">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
         
         </main>
 
-        <div class="autoshow">
-            <P>ranking is...</P>
-            <p>#1 korea</p>
-            <p>#2 china</p>
-            <p>#3 America</p>
-            <p>#4 Japan</p>
+        <div class="content-wrapper">
+            <div class="autoshow">
+                <P class="intro">Ranking is...</P>
+                <p class="rank">#1 korea</p>
+                <p class="rank">#2 china</p>
+                <p class="rank">#3 America</p>
+                <p class="rank">#4 Japan</p>
+            </div>
+
+            <div class="bottom-left-section">
+                <button  id="moreInfo">
+                    <p>More Info!</p>
+                </button>
+            </div>
+        </div>
+
+        <div id="tab-body" class="side-tab">
+
+            <button class="close-btn">
+                <i class="fa-solid fa-x"></i>
+            </button>
+
+            <h2>Rest of the ranking</h2>
+
+            <div class="list-body">
+                <ul>
+                <li>#1 korea</li>
+                <li>#2 china</li>
+                <li>#3 America</li>
+                <li>#4 Japan</li>
+                <li>#5 Singapore</li>
+                <li>#6 Australia</li>
+                <li>#7 India</li>
+                <li>#8 Germany</li>
+                <li>#9 Spain</li>
+                <li>#10 Italy</li>
+                </ul>
+            </div>
         </div>
 
     <script src="script.js"></script>
