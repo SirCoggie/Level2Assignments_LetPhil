@@ -24,5 +24,7 @@ for( i = 1 ; i <= 10 ; i++ ) {
 //           "5 x 2 = 10"
 //           etc., but using baseNumber and the loop counter.
 
+
+
 // STEP 5: After finishing, try changing baseNumber to a new number
 //         and see the new table in the console.

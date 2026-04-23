@@ -1,6 +1,4 @@
 // 07 – ARRAY METHODS
-// ----------------------------------------------
-
 // ==============================================
 // TASK 1 – BASIC PUSH / POP / SHIFT / UNSHIFT
 // ==============================================
@@ -23,32 +21,22 @@
 
 // STEP 7: Log the final state of the fruits array.
 
-let fruits = ["Strawberry", "Orange", "Apple"];
+const fruits = ["Dragon Fruit", "Star Fruit", "Grapes"];
 console.log("Original Array", fruits);
 
-fruits.push("Grape");
+fruits.push("Mango");
 console.log("After Push", fruits);
 
-fruits.unshift("Pineapple");
-console.log("After unshift", fruits);
+fruits.unshift("Kiwi");
+console.log("After unShift", fruits);
 
-let removedFruit = fruits.pop();
-console.log("After pop", removedFruit);
+let removed = fruits.pop();
+console.log(removed);
 
-let removedSecondFruit = fruits.shift();
-console.log(`After shift`, removedSecondFruit);
+let removedFF = fruits.shift();
+console.log(removedFF);
 
-console.log("Final Array", fruits);
-
-// Using array methods with objects.
-
-// let person = {
-//   name: "John",
-//   tasks: ["Work", "eat", "gym"],
-// };
-
-// person.tasks.push("sleep");
-// console.log(person.tasks);
+console.log("Final Fruit Array", fruits);
 
 // ==============================================
 // TASK 2 – FOREACH: SAY HELLO TO EACH ITEM
@@ -59,22 +47,14 @@ console.log("Final Array", fruits);
 // STEP 9: Use .forEach() to log a message for each mentee, for example:
 //         "Hello, (name)! Ready to code?"
 
-let mentees = ["Alice", "Bob", "Charlie"];
-
+const mentees = ["Ryan", "Sung Jin", "Jorge"];
 mentees.forEach((mentee) => {
   console.log(`Hello, ${mentee}! Ready to code?`);
 });
 
-let hobbies = ["Yoga", "Boxing", "Reading"];
-
-hobbies.forEach((hobbie) => {
-  console.log(`One of my hobbies is ${hobbie}`);
-});
-
-const favoriteSongs = ["Mist", "Phantom", "Miss Me"];
-
-favoriteSongs.forEach((song) => {
-  console.log(`This is one of my favorite songs ${song}`);
+const countries = ["Canada", "Korea", "America"];
+countries.forEach((country) => {
+  console.log(`Hello! I am from ${country}!`);
 });
 
 // ==============================================
@@ -95,27 +75,15 @@ favoriteSongs.forEach((song) => {
 //          where each item is a string like "Value: X".
 
 // STEP 14: Log labeledNumbers.
-let numbers = [2, 4, 6, 8];
-let doubleNumbers = numbers.map((number) => number * 2);
 
-console.log(numbers);
-console.log(doubleNumbers);
+const numbers = [2, 4, 6, 8];
+const doubledNumbers = numbers.map((number) => number * 2);
 
-const labeledNumbers = numbers.map(
-  (labeledNumber) => `Value: ${labeledNumber}`,
-);
-console.log(labeledNumbers);
+console.log("Original Array", numbers);
+console.log("Doubled Numebers Array", doubledNumbers);
 
-const menteeNames = ["John", "Jesper", "Joshua"];
-
-const menteeCallBack = menteeNames.map((mentee) => `Mentee: ${mentee}`);
-console.log(menteeCallBack);
-
-const randomNumbers = [3, 6, 8];
-const squaredNumbers = randomNumbers.map(
-  (number) => `Squared number: ${number * number}`,
-);
-console.log(squaredNumbers);
+const labeledNumbers = numbers.map((number) => `Value: ${number}`);
+console.log("Labeled Numbers:", labeledNumbers);
 
 // ==============================================
 // TASK 4 – FILTER: KEEP ONLY SOME VALUES
@@ -125,7 +93,8 @@ console.log(squaredNumbers);
 //          [3, 10, 7, 20, 15, 2].
 
 // STEP 16: Use .filter() to create a new array called bigNumbers
-//          that only keeps numbers greate
+//          that only keeps numbers greater than or equal to 10.
+
 // STEP 17: Log bigNumbers.
 
 // STEP 18: Use .filter() again to create a new array called evenNumbers
@@ -133,7 +102,57 @@ console.log(squaredNumbers);
 
 // STEP 19: Log evenNumbers.
 
-const mixedNumbers = [3, 10, 7, 29, 15, 2];
+const mixedNumbers = [3, 10, 7, 20, 15, 2];
 
-const bigNumbers = mixedNumbers.filter((mixedNum) => mixedNum >= 10);
-console.log("These numbers are greater than or equal to:", bigNumbers);
+const bigNumbers = mixedNumbers.filter((greater) => greater >= 10);
+console.log("BigNumbers:", bigNumbers);
+
+const evenNumbers = mixedNumbers.filter((even) => even % 2 === 0);
+console.log("Even Numbers", evenNumbers);
+
+// ==============================================
+// TASK 5 – REDUCE: COMBINE VALUES INTO ONE RESULT
+// ==============================================
+
+// STEP 20: Create an array called prices with some numbers, for example:
+//          [5, 10, 15, 20].
+
+// STEP 21: Use .reduce() to calculate the total price.
+//          Create a variable called totalPrice.
+//          The reduce logic should:
+//          - start from 0
+//          - add each price to the running total.
+
+// STEP 22: Log totalPrice.
+
+// STEP 23: Use .reduce() again to find the largest number
+//          in the prices array.
+//          Create a variable called maxPrice.
+
+// STEP 24: Log maxPrice.
+
+const prices = [5, 10, 15, 20];
+
+const totalPrice = prices.reduce((total, price) => {
+  return total + price;
+}, 0);
+
+console.log("Total Price:", totalPrice);
+
+const maxPrice = prices.reduce((largest, price) => {
+  return price > largest ? price : largest;
+}, prices[0]);
+
+// largest = prices[0]
+
+// const prices = [5, 10, 15, 20];
+
+// larges = 5
+
+// 10> 5  yes - 10
+// 15 > 10 yes  - 15
+// 20 > 15 yes - 20
+
+// name.reduce((accumulator, currentItem)=>{
+//     return updatedValue;
+// }, startValue)

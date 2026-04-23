@@ -5,6 +5,7 @@
 // Functions are the "machines" of JavaScript.
 // You put information IN (inputs), and you get results OUT (outputs).
 //
+
 // ==============================================
 // TASK 1 – YOUR FIRST FUNCTION (DECLARATION)
 // ==============================================
@@ -25,13 +26,21 @@
 //
 // STEP 4: Call (run) the function by writing:
 //         sayHello();
+//
 
 function sayHello() {
-  console.log("Hello from a function!");
+  console.log("Hello from a function");
 }
 
-console.log("About to call sayHello...");
+console.log("About to call sayHello..");
 sayHello();
+
+function sayByee() {
+  console.log("Bye from a function");
+}
+
+console.log("About to say bye");
+sayByee();
 
 // ==============================================
 // TASK 2 – PARAMETERS (INPUTS) + ARGUMENTS (VALUES)
@@ -47,18 +56,24 @@ sayHello();
 // STEP 5: Call greetUser 3 times with different names as arguments.
 //
 // STEP 6: Add labels so you can clearly see which call is which.
-//
 
 function greetUser(userName) {
-  console.log(`Hi, ${userName}`);
+  console.log("Hi, " + userName + "!");
 }
 
-const names = ["Lena", "Eduardo", "Stephen"];
+console.log("Calling greetUser 1");
+greetUser("Larry");
+console.log("Calling greetUser 2");
+greetUser("Jorge");
+console.log("Calling greetUser 3");
+greetUser("Ryan");
 
-names.forEach((name) => {
-  greetUser(name);
-});
+function welcomeUser(user) {
+  console.log(`Welcome, ${user}`);
+}
 
+welcomeUser("name");
+//
 // ==============================================
 // TASK 3 – RETURN VALUES (OUTPUTS)
 // ==============================================
@@ -76,18 +91,26 @@ names.forEach((name) => {
 //
 // STEP 10: Try calling addTwoNumbers without storing it, like:
 //          console.log(addTwoNumbers(10, 5));
-//
 
 function addTwoNumbers(a, b) {
   return a + b;
 }
 
-const total = addTwoNumbers(3, 7);
+console.log(addTwoNumbers(3, 19));
+// let total = addTwoNumbers(3, 19);
+// console.log(total);
 
-console.log("total =", total);
+function multiplyTwoNumbers(c, d) {
+  return c * d;
+}
 
-console.log(addTwoNumbers(10, 5));
+console.log(multiplyTwoNumbers(3, 232));
 
+// let multiplication = multiplyTwoNumbers(3, 232);
+
+// console.log(multiplication);
+
+//
 // ==============================================
 // TASK 4 – FUNCTION EXPRESSION (FUNCTION INSIDE A VARIABLE)
 // ==============================================
@@ -107,9 +130,15 @@ console.log(addTwoNumbers(10, 5));
 //          Then put the call back AFTER the definition.
 //          (This is a preview of "hoisting" differences.)
 
-let sayBye = function () {
-  console.log("Bye!");
-};
+// const sayBye = function () {
+//   console.log("Bye!");
+// };
+
+// sayBye();
+
+function sayBye() {
+  console.log("Bye");
+}
 
 sayBye();
 
@@ -137,13 +166,16 @@ sayBye();
 const multiply = (x, y) => {
   return x * y;
 };
-console.log("multiply 4 * 6 =", multiply(4, 6));
+
+console.log("multiply 3 * 5 = ", multiply(3, 5));
 
 const makeFullName = (first, last) => {
-  return `${first} ${last}`;
+  return first + " " + last;
 };
+
 console.log(makeFullName("Riley", "Kim"));
 
+//
 // ==============================================
 // TASK 6 – CALLBACKS (FUNCTIONS PASSED INTO FUNCTIONS)
 // ==============================================
@@ -161,18 +193,19 @@ console.log(makeFullName("Riley", "Kim"));
 // STEP 20: Call runTwice again but this time pass an arrow function that logs:
 //          "Again!"
 //
+
 function runTwice(callback) {
-  callback();
   callback();
 }
 
 runTwice(function () {
-  console.log("running!");
+  console.log("Running!");
 });
 
 runTwice(() => {
   console.log("Again!");
 });
+
 // ==============================================
 // TASK 7 – MINI “REAL LIFE” EXAMPLE: FORMATTER
 // ==============================================
@@ -187,17 +220,15 @@ runTwice(() => {
 //          (Hint: use priceNumber.toFixed(2))
 //
 // STEP 22: Test it with console.log using 3 different numbers.
-
 //
 
 function formatPrice(priceNumber) {
-  return `$${priceNumber.toFixed(2)}`;
+  return "$" + priceNumber.toFixed(2);
 }
 
-console.log(formatPrice(10));
-console.log(formatPrice(11.99));
-console.log(formatPrice(12.999999999999999));
-
+console.log(formatPrice(10.111));
+console.log(formatPrice(2.555));
+console.log(formatPrice(66.6785959));
 // ==============================================
 // TASK 8 – QUICK PREVIEW: “FUNCTIONS POWER DOM”
 // ==============================================

@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+.mint {
+        background: #b9f0b4;
+}
+
 body{
     min-height: 2200px;
     display: flex;
