@@ -75,5 +75,37 @@
     <!-- STEP 14 — Link JavaScript -->
     <!-- Add a <script> tag at the bottom of the body -->
     <!-- src="homework.js" -->
+
+    <main class="page">
+      <!-- main Card -->
+      <section class="card" id="eventCard">
+        <!-- title -->
+        <h1 id="cardTitle">DOM + Events</h1>
+        <!-- description -->
+        <p id="cardDescription" class="description"></p>
+        <!--  -->
+        <div class="button-row">
+          <!-- change title button -->
+          <button id="changeTitleBtn" class="btn primary">Change Title</button>
+          <!-- highlight button -->
+          <button id="toggleHighlightBtn" class="btn ghost">Toggle Highlight</button>
+        </div>
+        <div class="counter-section">
+          <h2>Let's Count~!</h2>
+          <!-- counter Value -->
+          <p>Button count: <span id="counterValue">0</span></p>
+        </div>
+        <!-- +1 button -->
+        <button id="incrementBtn" class="btn small">+1</button>
+        <div class="live-previes-section">
+          <!-- text input -->
+          <label for="previewInput"> <input id="previewInput" type="text"></label>
+        </div>
+        <!-- text output -->
+        <p><span id="previewText">Nothing typed yet.</span></p>
+        <p class="hint">Go to script.js and test its interaction if it doesn't work. If it still doesn't work, you are hopeless! ^^</p>
+      </section>
+    </main>
+    <script src="homework.js"></script>
   </body>
 </html>

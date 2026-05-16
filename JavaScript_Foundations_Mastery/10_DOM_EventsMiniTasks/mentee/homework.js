@@ -19,8 +19,46 @@
 //         - The text input (id "previewInput")
 //         - The preview span (id "previewText")
 //
+
+// main Card
+const eventCard = document.getElementById("eventCard"); 
+// title
+const cardTitle = document.getElementById("cardTitle");
+// description
+const cardDescription = document.getElementById("cardDescription");
+
+// buttons
+const changeTitleBtn = document.getElementById("changeTitleBtn");
+const toggleHighlightBtn = document.getElementById("toggleHighlightBtn");
+// +1 button
+const incrementBtn = document.getElementById("incrementBtn");
+
+// counter Value(span)
+const counterValue = document.getElementById("counterValue");
+
+// text input+ text preview
+const previewInput = document.getElementById("previewInput");
+const previewText = document.getElementById("previewText");
+
 // STEP 2: (Optional) console.log some of these variables to make
 //         sure you selected them correctly.
+
+
+changeTitleBtn.addEventListener("click", () => {
+    console.log("changeTitleButton has been pressed!");
+});
+
+toggleHighlightBtn.addEventListener("click", () => {
+    console.log("toggleHighlight button has been pressed");
+});
+
+incrementBtn.addEventListener("click", () => {
+    console.log("incrementBtn has been pressed!");
+});
+
+previewInput.addEventListener("input", () => {
+    console.log("typing!");
+});
 
 // ==============================================
 // TASK 2 – CLICK EVENT: CHANGE TITLE TEXT
@@ -33,6 +71,36 @@
 //         - (Optional) Also update the description to mention that
 //           the title was changed by clicking the button.
 
+let clickCount = 0;
+
+changeTitleBtn.addEventListener("click", () => {
+    clickCount++;
+
+if (clickCount === 1) {
+    cardTitle.textContent = "Hmmmm hmmm I can't decide on the title"
+    cardDescription.textContent = "You pressed the button! You found out I have no creativity in deciding on title name! Congrats itchy fingers!"
+}
+
+
+// i was bored
+// else if (clickCount === 3)  {
+//     cardTitle.textContent = "Stop Pressing!";
+//     cardDescription.textContent = "I'm warning you as a friendly remidner";
+// }
+
+// else if (clickCount === 5) {
+//     cardTitle.textContent = "You are going to regret if you keep pressing!";
+//     cardDescription.textContent = "Its for your own mental good! Stop pressing";
+// }
+
+// else if (clickCount >= 10) {
+//     cardTitle.textContent = "ERROR!";
+//     cardDescription.textContent = "I have analyzed you have a problem! Go see a therapist!";
+// }
+
+});
+
+
 // ==============================================
 // TASK 3 – CLICK EVENT: TOGGLE HIGHLIGHT CLASS
 // ==============================================
@@ -41,6 +109,10 @@
 //         Inside the event listener function:
 //         - Use classList.toggle("event-card-highlight") on the main card.
 //           This should add/remove the highlight effect each time you click.
+
+toggleHighlightBtn.addEventListener("click", () => {
+    eventCard.classList.toggle("event-card-highlight");
+});
 
 // ==============================================
 // TASK 4 – CLICK EVENT: COUNTER +1
@@ -54,7 +126,12 @@
 //         - Increase the counter variable by 1.
 //         - Update the textContent of the counter span in the page
 //           so it always shows the current count.
+let counterValueNumber = 0 
 
+incrementBtn.addEventListener("click", () => {
+    counterValueNumber ++;
+    counterValue.textContent = counterValueNumber;
+});
 // ==============================================
 // TASK 5 – INPUT EVENT: LIVE PREVIEW
 // ==============================================
@@ -66,3 +143,13 @@
 //         - If the value is an empty string, set the preview text
 //           to "Nothing typed yet.".
 //         - Otherwise, set the preview text to exactly what the user typed.
+
+
+previewInput.addEventListener("input", () => {
+    const TypeInput = previewInput.value
+    if (TypeInput === "") {
+        previewText = "Nothing typed yet.";
+    } else {
+    previewText.textContent = TypeInput;
+    }
+});

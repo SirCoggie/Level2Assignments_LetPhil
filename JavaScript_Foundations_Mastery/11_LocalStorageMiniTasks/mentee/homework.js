@@ -9,6 +9,11 @@
 //         - clearQuoteBtn (id "clearQuoteBtn")
 //         - quoteDisplay (id "quoteDisplay")
 //
+const quoteInput = document.getElementById("quoteInput");
+const saveQuoteBtn = document.getElementById("saveQuoteBtn");
+const clearQuoteBtn = document.getElementById("clearQuoteBtn");
+const quoteDisplay = document.getElementById("quoteDisplay");
+
 // STEP 2: When the script loads:
 //         - Read localStorage.getItem("favoriteQuote").
 //         - If a quote exists (not null):
@@ -17,6 +22,17 @@
 //           Else:
 //             * Keep the default "No quote saved yet." message.
 //
+
+const savedFavorite = localStorage.getItem("favoriteQuote");
+
+if (savedFavorite) {
+    quoteDisplay.textContent = savedFavorite;
+    quoteInput.value = savedFavorite;
+} else {
+    quoteDisplay.textContent = "No quote saved yet";
+
+}
+
 // STEP 3: Add a "click" event listener to saveQuoteBtn.
 //         Inside the listener:
 //         - Read the current value from quoteInput.
@@ -25,8 +41,23 @@
 //         - (Optional) If the input is empty, you can decide not to save
 //           or show a custom message.
 //
+saveQuoteBtn.addEventListener("click", () => {
+    const savedQuote = quoteInput.value;
+    localStorage.setItem("favoriteQuote", savedQuote);
+    quoteDisplay.textContent = savedQuote;
+    if (quoteInput === "") {
+        quoteDisplay.textContent = "Nothing yet";
+    }
+})
+
 // STEP 4: Add a "click" event listener to clearQuoteBtn.
 //         Inside the listener:
 //         - Use localStorage.removeItem("favoriteQuote").
 //         - Clear the textarea (set value to an empty string).
 //         - Reset quoteDisplay.textContent to "No quote saved yet."
+
+clearQuoteBtn.addEventListener("click", () => {
+    localStorage.removeItem("favoriteQuote")
+    quoteInput.value = "";
+    quoteDisplay.textContent = "No quote saved yet";
+})

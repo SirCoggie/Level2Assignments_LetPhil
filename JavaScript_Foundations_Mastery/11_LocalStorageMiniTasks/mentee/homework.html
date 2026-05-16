@@ -66,5 +66,30 @@
     <!-- STEP 13 — Link JavaScript -->
     <!-- Add a <script> tag at the bottom of the body -->
     <!-- src="homework.js" -->
+     <main class="page">
+      <section class="card">
+        <h1>Favorite Quote Saver</h1>
+        <p>subtitle: quote will survive refresh?</p>
+        <div class="field">
+          <label for="quoteInput">
+            <textarea id="quoteInput" class="textarea" rows="4"></textarea>
+
+
+
+          </label>
+        </div>
+        <div class="button-row">
+          <button id="saveQuoteBtn" class="btn primary">Save Quote</button>
+          <button id="clearQuoteBtn" class="btn ghost">Clear Quote</button>
+        </div>
+
+        <div class="display-block">
+          <h2>Saved Quote</h2>
+          <p id="quoteDisplay" class="quote-display"></p>
+          <p class="hint">go see homework.js and refresh the page</p>
+        </div>
+      </section>
+     </main>
+     <script src="homework.js"></script>
   </body>
 </html>
